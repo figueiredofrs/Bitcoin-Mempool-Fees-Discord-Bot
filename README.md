@@ -1,55 +1,77 @@
+# Mempool Fees Discord Bot
 
----
-
-# 🚀 Bitcoin Transaction Fee Alert Discord Bot
-
-This is a Discord bot that connects to the Bitcoin Mempool API (mempool.space) to monitor current transaction fees and notify users when their desired target fee (specified in USD) is reached. Users can receive notifications via tagged messages in a specific channel.
+A Discord bot to fetch and notify users about current Bitcoin transaction fees.
 
 ## Features
 
-- 📈 Fetches current Bitcoin transaction fees from the Mempool API.
-- 💵 Allows users to set target fees in USD.
-- 🔔 Notifies users when the current fastest fee is below their target fee.
-- 📬 Sends notifications by tagging users in a specific channel.
+- Fetch current Bitcoin transaction fees
+- Set a target fee in USD and get notified when the fastest fee is below the target
 
-## Getting Started
+## Commands
 
-### Adding the Bot to Your Server
+### /fee
 
-1. **Invite the bot to your server**: Use the following link to add the bot to your Discord server. Ensure you have the necessary permissions to add bots.
-   
-   [Invite Link](https://discord.com/oauth2/authorize?client_id=1244394848036061325&permissions=8&scope=bot)
+Get the current Bitcoin transaction fees.
 
-2. **Authorize the bot**: Follow the instructions to authorize the bot and grant it the required permissions.
+**Usage:**
+```
+/fee
+```
 
-### Commands
+**Description:**
+Fetches the current Bitcoin transaction fees and displays them in the chat.
 
-- `!fee`: Fetches and displays the current transaction fees.
-- `!setfee <target_fee_in_usd>`: Sets a target fee in USD for the user. The bot will notify the user when the current fastest fee is below this target.
+### /setfee
 
-### Example Usage
+Set a target fee in USD and get notified when the fastest fee is below the target.
 
-- `!fee`:
-  ```
-  📊 Current fees:
-  🚀 Fastest Fee: 14 sat/vB ($ 2.43/vB)
-  🕐 Half Hour Fee: 12 sat/vB ($ 2.08/vB)
-  ⏳ Hour Fee: 10 sat/vB ($ 1.73/vB)
-  ```
+**Usage:**
+```
+/setfee target_fee_usd: <amount>
+```
 
-- `!setfee 2.50`:
-  ```
-  ✅ Set target fee to 2.50 USD (0.01 sat/vB) for @user.
-  ```
+**Parameters:**
+- `target_fee_usd` (required): The target fee in USD.
+
+**Example:**
+```
+/setfee target_fee_usd: 10.00
+```
+
+**Description:**
+Sets a target fee in USD. The bot will notify you via direct message when the fastest fee is below the specified target.
+
+## Installation
+
+To add the Mempool Fees Discord Bot to your server, click on the link below and follow the instructions:
+
+[Invite Mempool Fees Bot to your server](https://discord.com/oauth2/authorize?client_id=1244394848036061325&scope=bot+identify+guilds&permissions=2147483647)
+
+### Step-by-Step Guide
+
+1. **Click the Invite Link**: Click on the [invite link](https://discord.com/oauth2/authorize?client_id=1244394848036061325&scope=bot+identify+guilds&permissions=2147483647) to begin the process.
+
+2. **Select a Server**: You will be redirected to a Discord page. Select the server where you want to add the bot from the drop-down menu. Ensure you have the necessary permissions to add bots to the server.
+
+3. **Authorize the Bot**: Click on the "Authorize" button. You may need to complete a CAPTCHA to prove you are not a bot.
+
+4. **Set Up Permissions**: The bot will request permissions to perform its functions. Make sure to grant all requested permissions to ensure it works correctly.
+
+## How It Works
+
+1. **/fee Command:**
+   - Fetches the current Bitcoin transaction fees from the Mempool API.
+   - Displays the fees in sat/vB and USD based on the current BTC to USD exchange rate.
+
+2. **/setfee Command:**
+   - Sets a target fee in USD for the user.
+   - Periodically checks the current fastest fee.
+   - Notifies the user via direct message when the fastest fee is below the target.
+
+## Support
+
+For support, please open a discussion in the [repository discussions](https://github.com/figueiredofrs/Mempool-Fees-Discord-Bot/discussions).
 
 ## License
 
-Not specified yet, as it is closed-source.
-
-## Acknowledgements
-
-- 🤖 [discord.py](https://github.com/Rapptz/discord.py) - Python wrapper for the Discord API
-- 📡 [Mempool.space API](https://mempool.space/api) - Bitcoin Mempool API for transaction fee data
-- 💱 [CoinDesk API](https://www.coindesk.com/coindesk-api) - Bitcoin price index API
-
----
+This project is licensed under the MIT License.
