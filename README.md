@@ -70,7 +70,7 @@ To add the Mempool Fees Discord Bot to your server, click on the link below and 
 
 ## Support
 
-For support, please open a discussion in the [repository discussions](https://github.com/figueiredofrs/Mempool-Fees-Discord-Bot/discussions).
+For support, please open a discussion in the [repository discussions](https://github.com/figueiredofrs/Bitcoin-Mempool-Fees-Discord-Bot/discussions).
 
 ## License
 
